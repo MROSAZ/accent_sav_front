@@ -1,0 +1,222 @@
+{
+  "Lang": {
+    "lang": "اللغة",
+    "fr": "الفرنسية",
+    "ar": "العربية"
+  },
+  "MENU": {
+    "stat": "الإحصائيات",
+    "management": "إدارة البيانات",
+    "administration": "الادارة",
+    "citoyen": "المواطنين",
+    "categories": "التصنيفات",
+    "sub-categories": "الفئات الفرعية",
+    "news": "الفعاليات",
+    "region": "المناطق",
+    "reclamations": "الشكاوى",
+    "admin": "مدير النظام",
+    "update": "تحديث",
+    "title-suggestion": "العناوين المقترحة",
+    "historical": "السجل",
+    "historicalservice": "السجل حسب العون",
+    "historicalservicesubcategory": "السجل حسب الفئة"
+  },
+    "EU_SUPPORT": "This interface has been created and maintained with the financial support of the European Union within the framework of the ENI CBC Med programme",
+    "LOGIN":{
+      "bye":"Bye",
+      "err":"Invalid username or Password!",
+      "expiredSession":"Session expired!",
+      "pwd":"Password",
+      "submit":"تسجيل الدخول",
+      "username":"Username",
+      "loading":"loading",
+      "login": "البريد الإلكتروني",
+      "newpassword": "كلمة المرور الجديدة",
+      "repeternewpassword": "كرر كلمة المرور الجديدة",
+      "password": "Mot de passe",
+      "submitreset": "إعادة ضبط كلمة المرور"
+    },
+  "stat": {
+
+  },
+  "administration": {
+    "username": "اسم المستخدم",
+    "name":"الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة السر",
+    "createdby": "انشأ من قبل",
+    "createddate": "تاريخ الإنشاء",
+    "modifiedby": "التعديل بواسطة",
+    "modifieddate": "تاريخ التعديل",
+    "authority": "السلطة"
+  },
+  "citoyen": {
+    "name":"الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة السر",
+    "createdby": "انشأ من قبل",
+    "createddate": "تاريخ الإنشاء",
+    "modifiedby": "التعديل بواسطة",
+    "modifieddate": "تاريخ التعديل",
+    "authority": "السلطة",
+    "phoneNumber": "رقم الهاتف"
+  },
+  "categories": {
+    "id": "المعرّف",
+    "categoryar": "الفئة",
+    "categoryfr": "الفئة الفرعية باللغة الفرنسية",
+    "supervisor": "المشرف",
+    "color": "اللون"
+  },
+  "sub-categories": {
+    "id": "المعرّف",
+    "category": "الفئة",
+    "sub-categoryar": "الفئة الفرعية",
+    "sub-categoryfr": "الفئة الفرعية باللغة الفرنسية",
+    "supervisor": "المشرف",
+    "color": "اللون"
+  },
+  "news": {
+    "id": "المعرّف",
+    "title": "العنوان",
+    "content": "المحتوى",
+    "region": "المنطقة",
+    "image": "الصورة"
+  },
+  "region": {
+    "id": "المعرّف",
+    "regionfr": "المنطقة باللغة الفرنسية",
+    "regionar": "المنطقة"
+  },
+  "reclamations": {
+    "id": "المعرّف",
+    "title": "العنوان",
+    "description": "الوصف",
+    "created-date": "تاريخ الإنشاء",
+    "citoyen": "المواطن",
+    "category": "الفئة",
+    "sub-category": "الفئة الفرعية",
+    "assigned": "إحالة إلى",
+    "status": "الحالة",
+    "supervisor": "المشرف",
+    "emplacement": "الموقع"
+  },
+  "title": {
+    "id": "المعرّف",
+    "suggestionfr": "الاقتراح بالفرنسية",
+    "suggestionar": "الاقتراح",
+    "sub-categoryar": "الفئة الفرعية",
+    "sub-categoryfr": "Sous catégorie"
+  },
+  "message": {
+    "send": "إرسال",
+    "message": "اكتب رسالتك",
+    "getmessages": "عرض الرسائل",
+    "getImages": "عرض الصورة",
+    "loading": "قيد الإرسال",
+    "deleteImage": "حذف الصورة",
+    "wait": "لحظة من فضلك ..."
+  },
+  "response": {
+    "addSuccess": "تمت الإضافة بنجاح",
+    "addError": "حدث خطأ أثناء عملية الإضافة",
+    "updateSuccess": "تم التعديل بنجاح",
+    "updateError": "حدث خطأ أثناء عملية التعديل",
+    "deleteSuccess": "تم الحذف بنجاح",
+    "deleteError": "حدث خطأ أثناء عملية الحذف",
+    "addDemand": "هل أنت متأكد أنك تريد الإضافة",
+    "updateDemand": "هل أنت متأكد أنك تريد التعديل",
+    "deleteDemand": "هل أنت متأكد أنك تريد الحذف"
+  },
+  "dashboard": {
+    "head": "بلدية المهدية - تحسين رقمنة الخدمات",
+    "body": "استجابة للاحتياجات المتزايدة لمجتمعنا، قامت بلدية المهدية بتطبيق نظام شامل لمعالجة الشكاوى. تم تصميم هذا النظام المبتكر لتحسين الكفاءة والشفافية وسهولة الوصول إلى خدماتنا. وهو يدور حول الاستلام والمعالجة الفعالة للطلبات المقدمة من مواطنينا.",
+    "footer": "تلتزم بلدية المهدية بالاستفادة من التكنولوجيا من أجل تحسين مجتمعنا. يوضح نظام الاسترداد التزامنا بتوفير خدمات فعالة وشفافة وسهلة المنال لمواطني المهدية.",
+    "ticketStatusLastMonth": "حالة الشكاوى آخر 30 يومًا",
+    "numberTotalTickets": "عدد إجمالي الشكاوى",
+    "numberTreatedTickets": "عدد الشكاوى التي تمت معالجتها",
+    "numberProgressTickets": "عدد الشكاوى الجارية",
+    "numberPendingTickets": "عدد الشكاوى في انتظار المراجعة",
+    "10citoyen": "مواطنين",
+    "1citoyen": "مواطن",
+    "total": "المجموع",
+    "treated": "تمت معالجته",
+    "progress": "قيد التقدم",
+    "pending": "قيد الانتظار",
+    "history": "تتبع تطور عدد الشكاوى حسب الحالة",
+    "week": "أسبوع",
+    "month": "شهر",
+    "day": "يوم",
+    "year": "سنة",
+    "ageDistribution": "التوزيع العمري",
+    "courbe": "تطور الشكاوى: تحليل زمني لعدد الطلبات",
+    "totalcitoyen": "إحصاء المواطنين",
+    "efficiency": "معدل معالجة الشكاوى",
+    "map": "الخريطة",
+    "days": {
+      "monday": "الاثنين",
+      "tuesday": "الثلاثاء",
+      "wednesday": "الأربعاء",
+      "thursday": "الخميس",
+      "friday": "الجمعة",
+      "saturday": "السبت",
+      "sunday": "الأحد"
+    },
+    "months": {
+      "january": "جانفي",
+      "february": "فيفري",
+      "march": "مارس",
+      "april": "أفريل",
+      "may": "ماي",
+      "june": "جوان",
+      "july": "جويلية",
+      "august": "أوت",
+      "september": "سبتمبر",
+      "october": "أكتوبر",
+      "november": "نوفمبر",
+      "december": "ديسمبر"
+    }
+  },
+  "status": {
+    "pending": "قيد الانتظار",
+    "progress": "قيد التنفيذ",
+    "traited": "منتهي"
+  },
+  "authorities": {
+    "assigned": "مُكَلَّف",
+    "supervisor": "مشرف",
+    "newsManager": "مشرف أخبار",
+    "dataManager": "مدير البيانات"
+
+  },
+  "HISTORY":{
+    "user":"السجل حسب العون",
+    "category":"السجل حسب الفئة",
+    "period":"Période",
+    "time":{
+      "hour":"Heure",
+      "day":"Jour",
+      "month":"Mois"
+    },
+    "authority":"المسؤولية",
+    "startDate":"Date début",
+    "endDate":"Date fin",
+    "validate": "تأكيد",
+    "details": "Détails",
+    "agent": "المسؤولون",
+    "categories": "الفئات",
+    "comparator": "Comparateur",
+    "addMeasure": "Ajouter une mesure",
+    "expandList":" Afficher liste",
+    "hideList":"Cacher liste",
+    "deleteAll":"Tout effacer"
+  },
+  "stats": {
+    "titleUserStats": "تقدم معالجة الشكوى حسب العون",
+    "titleCategoryStats": "تقدم معالجة الشكوى حسب الفئة",
+    "noData": "لايوجد بيانات",
+    "taskProgression": "تقدم المهمة (الحالة/الأيام)",
+    "count": "المجموع",
+    "avg": "متوسط أيام معالجة الشكاوى"
+  }
+}

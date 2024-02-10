@@ -1,0 +1,235 @@
+{
+  "Lang": {
+    "lang": "Langue",
+    "fr": "Français",
+    "ar": "Arabe"
+  },
+    "EU_SUPPORT": "Cette interface a été créé et maintenu avec le soutien financier de l’Union européenne dans le cadre du programme ENI CBC Med",
+    "LOGIN":{
+      "bye":"Bye",
+      "err":"Identifiant ou mot de passe invalide !",
+      "expiredSession":"Session expirée",
+      "pwd":"Mot de passe",
+      "submit":"Se connecter",
+      "username":"Identifiant",
+      "loading":"Une moment SVP",
+      "login": "Email",
+      "newpassword": "Nouveau Mot de passe",
+      "repeternewpassword": "Répeter Nouveau Mot de passe",
+      "password": "Mot de passe",
+      "submitreset": "Réseter mot de passe"
+
+    },
+    "MENU": {
+      "stat": "Dashboard",
+      "management": "Gestion de données",
+      "administration": "Administration",
+      "citoyen": "Citoyens",
+      "categories": "Les catégories",
+      "sub-categories": "Les sous catégories",
+      "news": "Les événements",
+      "region": "Les régions",
+      "reclamations": "Les réclamations",
+      "admin": "Administrateur système",
+      "update": "Mise à jour",
+      "title-suggestion": "Suggestion des Titres",
+      "historical": "Historique",
+      "historicalservice": "Historique selon l'agent",
+      "historicalservicesubcategory": "Historique selon S-catégorie "
+
+    },
+    "TOOLTIP": {
+        "lang":"Langue",
+        "notif":"Notifications",
+        "logout":"Déconnexion",
+        "toggleActiv":"Activer/désactiver",
+        "edit":"Modifier",
+        "delete": "Supprimer",
+        "powerInst": "Puissance instantanée",
+        "phv": "Photovoltaique",
+        "general": "Générale"
+    },
+  "stat": {},
+  "administration": {
+    "username": "Nom d'utilisateur",
+    "name":"Nom complet",
+    "email": "Email",
+    "password": "Mot de passe",
+    "createdby": "Créé par",
+    "createddate": "Date de création",
+    "modifiedby": "Modification par",
+    "modifieddate": "Date de modification",
+    "authority": "Autorité"
+  },
+  "citoyen": {
+    "username": "Nom d'utilisateur",
+    "name":"Nom complet",
+    "email": "Email",
+    "password": "Mot de passe",
+    "createdby": "Créé par",
+    "createddate": "Date de création",
+    "modifiedby": "Modification par",
+    "modifieddate": "Date de modification",
+    "authority": "Autorité",
+    "phoneNumber": "Numéro de téléphone"
+  },
+  "categories": {
+    "id": "Identifiant",
+    "categoryfr": "Catégorie",
+    "categoryar": "Sous catégorie en arabe",
+    "supervisor": "superviseur",
+    "color": "Couleur"
+  },
+  "sub-categories": {
+    "id": "Identifiant",
+    "category": "Catégorie",
+    "sub-categoryfr": "Sous catégorie",
+    "sub-categoryar": "Sous catégorie en arabe",
+    "supervisor": "superviseur",
+    "color": "Couleur"
+  },
+  "news": {
+    "id": "Identifiant",
+    "title": "Titre",
+    "content": "Contenue",
+    "region": "Région",
+    "image": "Image"
+  },
+  "region": {
+    "id": "Identifiant",
+    "regionfr": "Région",
+    "regionar": "Région en arabe"
+  },
+  "reclamations": {
+    "id": "Identifiant",
+    "title": "Titre",
+    "description": "Description",
+    "created-date": "Date de création",
+    "citoyen": "Citoyen",
+    "category": "Catégorie",
+    "sub-category": "Sous catégorie",
+    "assigned": "Assigner à",
+    "status": "Status",
+    "supervisor": "superviseur",
+    "emplacement": "Le site"
+  },
+  "title": {
+    "id": "Identifiant",
+    "suggestionfr": "Suggestion",
+    "suggestionar": "Suggestion en arabe",
+    "sub-categoryfr": "Sous catégorie",
+    "sub-categoryar": "الفئة الفرعية"
+  },
+  "message": {
+    "send": "Envoyer",
+    "message": "Ecrivez votre message",
+    "getmessages": "Afficher les messages",
+    "getImages": "Afficher la photo",
+    "loading": "En cours d'envoi",
+    "deleteImage": "Supprimer l'image",
+    "wait": "Une moment SVP ..."
+  },
+  "response": {
+    "addSuccess": "Ajouter avec succès",
+    "addError": "Erreur au cours d'ajout",
+    "updateSuccess": "Modifier avec succès",
+    "updateError": "Erreur au cours de modification",
+    "deleteSuccess": "Supprimer avec succès",
+    "deleteError": "Erreur au cours de suppression",
+    "addDemand": "Etes-vous sûr que vous voulez ajouter",
+    "updateDemand": "Etes-vous sûr que vous voulez modifier",
+    "deleteDemand": "Etes-vous sûr que vous voulez supprimer"
+  },
+  "dashboard": {
+    "head": "Municipalité de Mahdia Améliorer la numérisation des services",
+    "body": "En réponse aux besoins croissants de notre communauté, la municipalité de Mahdia a mis en place un système complet de traitement des reclamations. Ce système innovant est conçu pour améliorer l'efficacité, la transparence et l'accessibilité de nos services. Il s'articule autour de la réception et du traitement efficaces des demandes de nos citoyens.",
+    "footer": "La municipalité de Mahdia s'est engagée à tirer parti de la technologie pour l'amélioration de notre communauté. Le système de récupération témoigne de notre engagement à fournir des services efficaces, transparents et accessibles aux citoyens de Mahdia.",
+    "ticketStatusLastMonth": "Statut de réclamation 30 derniers jours",
+    "numberTotalTickets": "Nombre total de réclamations",
+    "numberTreatedTickets": "Nombre de réclamations traité",
+    "numberProgressTickets": "Nombre de réclamations en cours",
+    "numberPendingTickets": "Nombre de réclamations en attante",
+    "10citoyen": "Citoyens",
+    "1citoyen": "Citoyens",
+    "total": "Le total",
+    "treated": "Il a été traité",
+    "progress": "En cours",
+    "pending": "En attente",
+    "history": "Historique des réclamation",
+    "week": "Semaine",
+    "month": "Mois",
+    "day": "Jour",
+    "year": "Ans",
+    "ageDistribution": "Répartition par âge",
+    "courbe": "Évolution des Réclamations : Analyse Temporelle",
+
+    "totalcitoyen": "Recensement des citoyens",
+    "efficiency": "Taux de traitement des réclamations",
+    "map": "La carte",
+    "days": {
+      "monday": "Lundi",
+      "tuesday": "Mardi",
+      "wednesday": "Mercredi",
+      "thursday": "Jeudi",
+      "friday": "Vendredi",
+      "saturday": "Samedi",
+      "sunday": "Dimanche"
+    },
+    "months": {
+      "january": "Janvier",
+      "february": "Février",
+      "march": "Mars",
+      "april": "April",
+      "may": "Mai",
+      "june": "Juin",
+      "july": "Juillet",
+      "august": "Août",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "Décember"
+    }
+  },
+  "status": {
+    "pending": "En attente",
+    "progress": "En cours",
+    "traited": "Effectué"
+  },
+  "authorities": {
+    "assigned": "Assigned",
+    "supervisor": "Superviseur",
+    "newsManager": "Superviseur de l'information",
+    "dataManager": "Gestionnaire de données"
+  },
+  "HISTORY":{
+    "user":"Historique selon l'agent",
+    "category":"Historique selon S-category",
+    "period":"Période",
+    "time":{
+      "hour":"Heure",
+      "day":"Jour",
+      "month":"Mois"
+    },
+    "authority":"Responsabilité",
+    "startDate":"Date début",
+    "endDate":"Date fin",
+    "validate": "Valider",
+    "details": "Détails",
+    "agent": "Les responsable",
+    "categories": "Les sous categories",
+    "comparator": "Comparateur",
+    "addMeasure": "Ajouter une mesure",
+    "expandList":" Afficher liste",
+    "hideList":"Cacher liste",
+    "deleteAll":"Tout effacer"
+  },
+  "stats": {
+    "titleUserStats": "Progression du traitement des réclamations selon l'agent",
+    "titleCategoryStats": "Progression du traitement des réclamations selon S-category",
+    "noData": "Aucune données",
+    "taskProgression": "Progression des tâches  (Etat/Jours)",
+    "count": "Somme",
+    "avg": "Journées moyennes de traitement"
+
+  }
+}

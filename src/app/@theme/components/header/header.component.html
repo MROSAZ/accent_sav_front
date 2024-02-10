@@ -1,0 +1,28 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline" class="text-white  "></nb-icon>
+    </a>
+    <a class="d-flex justify-content-center align-items-center bg-white" style="height: 76px !important;" href="#" (click)="navigateHome()">
+      <img src="../../../../assets/images/logo_aci.png" style="width: 40%;" />
+    </a>
+  </div>
+
+</div>
+
+
+
+<div class="header-container">
+  <nb-select size="tiny" status="success" [(selected)]="selectedLanguage"
+             [placeholder]="('Lang.lang' | translate)" (selectedChange)="translateLanguageTo($event)" class=" float-right pointer">
+    <nb-option *ngFor="let language of translate.getLangs()" [value]="language">{{ ('Lang.' + language | translate) | uppercase}}</nb-option>
+  </nb-select>
+  <nb-actions size="small">
+    <nb-action class="control-item" (click)="navigateNotification()">
+      <nb-badge [text]="String(notificationService.numberUnreadNotification)" *ngIf="notificationService.numberUnreadNotification > 0" status="danger" position="top left"></nb-badge>
+        <nb-icon icon="bell-outline" class="text-white"></nb-icon>
+    </nb-action>
+    <nb-action (click)="logout()" status="control" nbTooltip="logout" nbTooltipPlacement="top" class="control-item text-white">        <nb-icon icon="log-out-outline" class="text-white"></nb-icon>
+    </nb-action>
+  </nb-actions>
+</div>

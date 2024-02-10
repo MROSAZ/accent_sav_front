@@ -1,0 +1,27 @@
+<link rel="stylesheet">
+<div class="demo-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12 mx-auto">
+        <div class="text-center image-size-small position-relative">
+          <img src="../../../assets/images/logo_aci.png" class=" p-2 bg-white">
+        </div>
+        <div class="p-5 bg-white rounded shadow-lg">
+          <form>
+            <label class="font-500">{{'LOGIN.login' | translate}}</label>
+            <input class="form-control form-control-lg mb-3" type="text" name="name" id="name"
+                   [(ngModel)]="email.email" [placeholder]="('LOGIN.login' | translate)" #username="ngModel">
+            <button class="btn btn-info btn-lg w-100 shadow-lg" *ngIf="!loading" (click)="login()">{{'LOGIN.submit' | translate }}</button>
+            <button class="btn btn-info btn-lg w-100 shadow-lg" *ngIf="loading" >{{'LOGIN.loading' | translate }} ...</button>
+            <div class="wrap-input100 mt-5" >
+              <nb-select size="tiny" status="success" [(selected)]="selectedLanguage"
+                         [placeholder]="('Lang.lang' | translate)" (selectedChange)="translateLanguageTo($event)" class=" float-right pointer">
+                <nb-option *ngFor="let language of translate.getLangs()" [value]="language">{{ ('Lang.' + language | translate) | uppercase}}</nb-option>
+              </nb-select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

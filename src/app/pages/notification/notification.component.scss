@@ -1,0 +1,94 @@
+/* Container styling */
+.notification-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Table styling */
+.notification-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+  background-color: #fff; /* Background color for the table */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+  border: 1px solid #e0e0e0; /* Border color for the table */
+}
+
+.notification-table th, .notification-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Header styling */
+.notification-table th {
+  background-color: #4caf50; /* Green background color for header */
+  color: #fff; /* Text color for header */
+}
+
+/* Status cell styling */
+.notification-table td {
+  position: relative;
+}
+
+.notification-table .unread::before,
+.notification-table .read::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease; /* Smooth transition for status change */
+}
+
+.notification-table .unread::before {
+  background-color: #ff5757; /* Darker red for unread */
+}
+
+.notification-table .read::before {
+  background-color: #4caf50; /* Darker green for read */
+}
+
+/* Hover effect for rows */
+.notification-table tr:hover {
+  background-color: #f9f9f9; /* Lighter background color on hover */
+}
+
+/* No notifications styling */
+.no-notifications {
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .notification-table th, .notification-table td {
+    font-size: 14px;
+  }
+  .notification-table td::before {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Add animation for the hover effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.notification-table tr:hover td {
+  animation: fadeIn 0.3s ease;
+}

@@ -1,0 +1,23 @@
+<div *ngIf="notification.length > 0" class="notification-container">
+  <table class="notification-table">
+    <thead>
+    <tr>
+<!--      <th>ID</th>-->
+      <th>Content</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let notification of notification">
+<!--      <td>{{ notification.id }}</td>-->
+      <td>{{ notification.content }}</td>
+      <td [ngClass]="{ 'unread': notification.status === 0, 'read': notification.status !== 0 }">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="notification.length === 0" class="no-notifications">
+  No notifications to display.
+</div>
