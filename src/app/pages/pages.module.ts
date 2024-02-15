@@ -7,6 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { DataManagementComponent } from './data-management/data-management.component';
+import { TableDynamicComponent } from './table-dynamic/table-dynamic.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,10 @@ import { DataManagementComponent } from './data-management/data-management.compo
   declarations: [
     PagesComponent,
     DataManagementComponent,
+    TableDynamicComponent,
+  ],
+  exports: [
+    TableDynamicComponent,
   ],
 })
 export class PagesModule {

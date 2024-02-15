@@ -37,143 +37,143 @@ export class MenuItemsService {
             link: '/pages/dashboard',
             home: true,
           },
-          {
-            title: this.translateService.instant('MENU.historical'),
-            icon: 'bar-chart',
-            children: [
-              {
-                title: this.translateService.instant('MENU.historicalservice'),
-                link: '/pages/historical/reclamations',
-              },
-              {
-                title: this.translateService.instant('MENU.historicalservicesubcategory'),
-                link: '/pages/historical/reclamations-per-categories',
-              },
-            ],
-          },
+          // {
+          //   title: this.translateService.instant('MENU.historical'),
+          //   icon: 'bar-chart',
+          //   children: [
+          //     {
+          //       title: this.translateService.instant('MENU.historicalservice'),
+          //       link: '/pages/historical/reclamations',
+          //     },
+          //     {
+          //       title: this.translateService.instant('MENU.historicalservicesubcategory'),
+          //       link: '/pages/historical/reclamations-per-categories',
+          //     },
+          //   ],
+          // },
           {
             title: this.translateService.instant('MENU.management'),
             icon: 'file-text-outline',
             children: [
               {
                 title: this.translateService.instant('MENU.administration'),
-                link: '/pages/data/user',
-              },
-              {
-                title: this.translateService.instant('MENU.citoyen'),
-                link: '/pages/data/citoyen',
-              },
-              {
-                title: 'Authorities',
-                link: '/pages/data/authorities',
-              },
-              {
-                title: this.translateService.instant('MENU.reclamations'),
-                link: '/pages/data/reclamations',
+                link: '/pages/data/admin',
               },
               {
                 title: this.translateService.instant('MENU.categories'),
-                link: '/pages/data/categories',
+                link: '/pages/data/categoies_component',
               },
-              {
-                title: this.translateService.instant('MENU.sub-categories'),
-                link: '/pages/data/sous-category',
-              },
-              {
-                title: this.translateService.instant('MENU.title-suggestion'),
-                link: '/pages/data/title-suggestion',
-              },
-              {
-                title: this.translateService.instant('MENU.region'),
-                link: '/pages/data/region',
-              },
+              // {
+              //   title: 'Authorities',
+              //   link: '/pages/data/authorities',
+              // },
+              // {
+              //   title: this.translateService.instant('MENU.reclamations'),
+              //   link: '/pages/data/reclamations',
+              // },
+              // {
+              //   title: this.translateService.instant('MENU.categories'),
+              //   link: '/pages/data/categories',
+              // },
+              // {
+              //   title: this.translateService.instant('MENU.sub-categories'),
+              //   link: '/pages/data/sous-category',
+              // },
+              // {
+              //   title: this.translateService.instant('MENU.title-suggestion'),
+              //   link: '/pages/data/title-suggestion',
+              // },
+              // {
+              //   title: this.translateService.instant('MENU.region'),
+              //   link: '/pages/data/region',
+              // },
             ],
           },
         ];
-    } else if (this.isSuperAdmin) {
-      this.menuItems = [
-      {
-        title: this.translateService.instant('MENU.stat'),
-        icon: 'activity-outline',
-        link: '/pages/dashboard',
-        home: true,
-      },
-      {
-        title: this.translateService.instant('MENU.management'),
-        icon: 'file-text-outline',
-        children: [
-          {
-            title: this.translateService.instant('MENU.admin'),
-            link: '/pages/data/admin',
-          },
-        ],
-      },
-    ];
-    } else if (this.isNewsManager) {
-      this.menuItems = [
-      {
-        title: this.translateService.instant('MENU.stat'),
-        icon: 'activity-outline',
-        link: '/pages/dashboard',
-        home: true,
-      },
-      {
-        title: this.translateService.instant('MENU.management'),
-        icon: 'file-text-outline',
-        children: [
-          {
-            title: this.translateService.instant('MENU.news'),
-            link: '/pages/data/news',
-          },
-        ],
-      },
-    ];
-    } else  if (this.isDataManager) {
-      this.menuItems = [
-        {
-          title: this.translateService.instant('MENU.management'),
-          icon: 'file-text-outline',
-          children: [
-            {
-        title: this.translateService.instant('MENU.categories'),
-          link: '/pages/data/categories',
-      },
-      {
-        title: this.translateService.instant('MENU.sub-categories'),
-          link: '/pages/data/sous-category',
-      },
-      {
-        title: this.translateService.instant('MENU.title-suggestion'),
-          link: '/pages/data/title-suggestion',
-      },
-      {
-        title: this.translateService.instant('MENU.region'),
-          link: '/pages/data/region',
-      },
-          ],
-        },
-    ];
-    } else {
-      this.menuItems = [
-        {
-          title: this.translateService.instant('MENU.stat'),
-          icon: 'activity-outline',
-          link: '/pages/dashboard',
-          home: true,
-        },
-        {
-          title: this.translateService.instant('MENU.management'),
-          icon: 'file-text-outline',
-          children: [
-            {
-              title: this.translateService.instant('MENU.reclamations'),
-              link: '/pages/data/reclamations',
-            },
-          ],
-        },
-      ];
     }
-
+    // else if (this.isSuperAdmin) {
+    //   this.menuItems = [
+    //   {
+    //     title: this.translateService.instant('MENU.stat'),
+    //     icon: 'activity-outline',
+    //     link: '/pages/dashboard',
+    //     home: true,
+    //   },
+    //   {
+    //     title: this.translateService.instant('MENU.management'),
+    //     icon: 'file-text-outline',
+    //     children: [
+    //       {
+    //         title: this.translateService.instant('MENU.admin'),
+    //         link: '/pages/data/admin',
+    //       },
+    //     ],
+    //   },
+    // ];
+    // } else if (this.isNewsManager) {
+    //   this.menuItems = [
+    //   {
+    //     title: this.translateService.instant('MENU.stat'),
+    //     icon: 'activity-outline',
+    //     link: '/pages/dashboard',
+    //     home: true,
+    //   },
+    //   {
+    //     title: this.translateService.instant('MENU.management'),
+    //     icon: 'file-text-outline',
+    //     children: [
+    //       {
+    //         title: this.translateService.instant('MENU.news'),
+    //         link: '/pages/data/news',
+    //       },
+    //     ],
+    //   },
+    // ];
+    // } else  if (this.isDataManager) {
+    //   this.menuItems = [
+    //     {
+    //       title: this.translateService.instant('MENU.management'),
+    //       icon: 'file-text-outline',
+    //       children: [
+    //         {
+    //     title: this.translateService.instant('MENU.categories'),
+    //       link: '/pages/data/categories',
+    //   },
+    //   {
+    //     title: this.translateService.instant('MENU.sub-categories'),
+    //       link: '/pages/data/sous-category',
+    //   },
+    //   {
+    //     title: this.translateService.instant('MENU.title-suggestion'),
+    //       link: '/pages/data/title-suggestion',
+    //   },
+    //   {
+    //     title: this.translateService.instant('MENU.region'),
+    //       link: '/pages/data/region',
+    //   },
+    //       ],
+    //     },
+    // ];
+    // } else {
+    //   this.menuItems = [
+    //     {
+    //       title: this.translateService.instant('MENU.stat'),
+    //       icon: 'activity-outline',
+    //       link: '/pages/dashboard',
+    //       home: true,
+    //     },
+    //     {
+    //       title: this.translateService.instant('MENU.management'),
+    //       icon: 'file-text-outline',
+    //       children: [
+    //         {
+    //           title: this.translateService.instant('MENU.reclamations'),
+    //           link: '/pages/data/reclamations',
+    //         },
+    //       ],
+    //     },
+    //   ];
+    // }
     return this.menuItems;
   }
 }

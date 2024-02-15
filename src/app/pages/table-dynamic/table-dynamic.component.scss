@@ -1,0 +1,36 @@
+.table {
+  width: 80%;
+  border-collapse: collapse;
+  border: 2px solid #ddd;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin: 0 auto; /* Center the table horizontally */
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  width: calc(100% / var(--num-columns)); /* Equal width columns */
+}
+
+.table th {
+  color: white;
+  font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Center the content vertically and horizontally */
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Add this CSS to define the custom property for the number of columns */
+.table-wrapper {
+  --num-columns: 3; /* Adjust this value based on your number of columns */
+}

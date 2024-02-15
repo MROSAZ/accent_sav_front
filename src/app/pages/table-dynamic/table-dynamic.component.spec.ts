@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HistoricalComponent } from './historical.component';
+import { TableDynamicComponent } from './table-dynamic.component';
 
-describe('HistoricalComponent', () => {
-  let component: HistoricalComponent;
-  let fixture: ComponentFixture<HistoricalComponent>;
+describe('TableDynamicComponent', () => {
+  let component: TableDynamicComponent;
+  let fixture: ComponentFixture<TableDynamicComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HistoricalComponent ]
+      declarations: [ TableDynamicComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HistoricalComponent);
+    fixture = TestBed.createComponent(TableDynamicComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

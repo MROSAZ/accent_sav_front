@@ -1,0 +1,27 @@
+<div class="table-wrapper" [style.--num-columns]="columns.length">
+  <table class="table align-middle">
+    <thead>
+    <tr>
+      <th class="bg-primary" *ngFor="let col of columns">{{ col }}</th>
+    </tr>
+    </thead>
+    <tbody *ngIf="data.length !== 0">
+    <tr *ngFor="let row of data">
+      <td *ngFor="let col of columns">
+        <div class="d-flex align-items-center">
+          {{ row[col] }}
+        </div>
+      </td>
+    </tr>
+    </tbody>
+    <tbody *ngIf="data.length === 0">
+    <tr >
+      <td >
+        <div class="d-flex align-items-center">
+          Aucune Element trouver
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

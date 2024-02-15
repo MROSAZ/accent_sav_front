@@ -70,6 +70,7 @@ export const NB_CORE_PROVIDERS = [
     NbAuthModule,
   ],
   declarations: [
+
   ],
 })
 export class CoreModule {

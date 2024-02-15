@@ -1,0 +1,14 @@
+<nb-card>
+  <nb-card-header>
+    <nb-icon status="primary" icon="settings-outline"></nb-icon>
+
+    <span class="ml-2" id="depot-span"> {{'MENU.categories' | translate}}</span>
+
+
+  </nb-card-header>  <nb-card-body>
+    <ngx-table-dynamic [columns]="columns" [data]="categoryService.categories" [service]="categoryService"></ngx-table-dynamic>
+  </nb-card-body>
+  <nb-card-footer>
+    <p class="font-weight-bold">{{categoryService.categories.length}} Categories</p>
+  </nb-card-footer>
+</nb-card>

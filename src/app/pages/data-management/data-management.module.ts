@@ -11,26 +11,30 @@ import { NotificationComponent } from '../notification/notification.component';
 import { AdminComponent } from './admin/admin.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {AngularEditorModule} from '@kolkov/angular-editor';
+import { CategoriesComponent } from './categories/categories.component';
+import {PagesModule} from '../pages.module';
 
 @NgModule({
   declarations: [
     AuthorityComponent,
     NotificationComponent,
     AdminComponent,
+    CategoriesComponent,
   ],
-    imports: [
-        CommonModule,
-        DataManagementRoutingModule,
-        ThemeModule,
-        Ng2SmartTableModule,
-        NbInputModule,
-        NbSelectModule,
-        NbCardModule,
-        FormsModule,
-        TranslateModule,
-        NbLayoutModule,
-        AngularEditorModule,
-        NbIconModule,
-    ],
+  imports: [
+    CommonModule,
+    DataManagementRoutingModule,
+    ThemeModule,
+    Ng2SmartTableModule,
+    NbInputModule,
+    NbSelectModule,
+    NbCardModule,
+    FormsModule,
+    TranslateModule,
+    NbLayoutModule,
+    AngularEditorModule,
+    NbIconModule,
+    PagesModule,
+  ],
 })
 export class DataManagementModule { }

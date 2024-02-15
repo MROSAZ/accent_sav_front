@@ -15,23 +15,23 @@ export class CategoriesService {
   constructor(private _http: HttpClient) { }
   findAllCategoryServices(): Observable<Category[]> {
     const headers = createAuthorizationHeader();
-    return this._http.get<Category[]>(dns + 'category', {headers: headers});
+    return this._http.get<Category[]>(dns + 'category_component', {headers: headers});
   }
-  addCategoryService(category: Category): Observable<any> {
+  add(category: Category): Observable<any> {
     const headers = createAuthorizationHeader();
-    return this._http.post(dns + 'category/add' , category, {headers: headers});
+    return this._http.post(dns + 'category_component/add' , category, {headers: headers});
   }
-  updateCategoryService(category: Category): Observable<any> {
+  update(category: Category): Observable<any> {
     const headers = createAuthorizationHeader();
-    return this._http.put( dns + 'category/update' , category , { headers: headers });
+    return this._http.put( dns + 'category_component/update' , category , { headers: headers });
   }
-  deleteCategoryService(id: number): Observable<any> {
+  delete(id: number): Observable<any> {
     const headers = createAuthorizationHeader();
-    return this._http.delete( dns + 'category/delete/' + id , { headers: headers });
+    return this._http.delete( dns + 'category_component/delete/' + id , { headers: headers });
   }
   findCategoryById(id: number): Observable<Category> {
     const headers = createAuthorizationHeader();
-    return this._http.get<Category>( dns + 'category/' + id , { headers: headers });
+    return this._http.get<Category>( dns + 'category_component/' + id , { headers: headers });
   }
   loadAllCategories() {
     this.findAllCategoryServices().subscribe(categories => {

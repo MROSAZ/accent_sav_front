@@ -4,7 +4,6 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import {NotificationComponent} from './notification/notification.component';
-import {CitoyenGuard} from '../@core/utils/CitoyenGuard';
 
 const routes: Routes = [{
   path: '',
@@ -24,12 +23,6 @@ const routes: Routes = [{
       loadChildren: () => import('./data-management/data-management.module')
         .then(m => m.DataManagementModule),
     },
-    {
-      path: 'historical',
-      loadChildren: () => import('./historical/historical.module')
-        .then(m => m.HistoricalModule),
-    },
-
     {
       path: '',
       redirectTo: 'dashboard',
