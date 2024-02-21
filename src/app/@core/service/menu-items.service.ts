@@ -63,6 +63,10 @@ export class MenuItemsService {
                 title: this.translateService.instant('MENU.categories'),
                 link: '/pages/data/categoies_component',
               },
+              {
+                title: this.translateService.instant('MENU.components'),
+                link: '/pages/data/components',
+              },
               // {
               //   title: 'Authorities',
               //   link: '/pages/data/authorities',

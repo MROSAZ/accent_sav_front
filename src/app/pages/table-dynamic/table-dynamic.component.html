@@ -1,27 +1,41 @@
-<div class="table-wrapper" [style.--num-columns]="columns.length">
-  <table class="table align-middle">
-    <thead>
-    <tr>
-      <th class="bg-primary" *ngFor="let col of columns">{{ col }}</th>
-    </tr>
-    </thead>
-    <tbody *ngIf="data.length !== 0">
-    <tr *ngFor="let row of data">
-      <td *ngFor="let col of columns">
-        <div class="d-flex align-items-center">
-          {{ row[col] }}
-        </div>
-      </td>
-    </tr>
-    </tbody>
-    <tbody *ngIf="data.length === 0">
-    <tr >
-      <td >
-        <div class="d-flex align-items-center">
-          Aucune Element trouver
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+<!--<div class="table-wrapper" [style.&#45;&#45;num-columns]="columns.length">-->
+<!--  <ngx-form-dynamic [formConfig]="config.columns"></ngx-form-dynamic>-->
+<!--  <table class="table align-middle">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th class="bg-white" style="width: 20% !important;" >-->
+<!--        <button *ngIf="config.actions.add" class="btn btn-primary" [innerHTML]="config['add']['addButtonContent']">-->
+<!--        </button>-->
+<!--      </th>-->
+<!--      <th class="bg-white font-weight-bolder text-dark" *ngFor="let key of Object.keys(config.columns)">{{ config.columns[key].title }}</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody *ngIf="data.length !== 0">-->
+<!--    <tr>-->
+
+<!--    </tr>-->
+<!--    <tr *ngFor="let row of data">-->
+<!--      <td style="width: 20% !important;">-->
+<!--        <button *ngIf="config.actions.update" class="btn" [innerHTML]="config['edit']['editButtonContent']">-->
+<!--        </button>-->
+<!--        <button *ngIf="config.actions.delete" class="btn" [innerHTML]="config['delete']['deleteButtonContent']">-->
+<!--        </button>-->
+<!--      </td>-->
+<!--      <td *ngFor="let key of Object.keys(config.columns)">-->
+<!--        <div class="d-flex align-items-center">-->
+<!--          {{ row[key] }}-->
+<!--        </div>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--    <tbody *ngIf="data.length === 0">-->
+<!--    <tr >-->
+<!--      <td >-->
+<!--        <div class="d-flex align-items-center">-->
+<!--          Aucune Element trouver-->
+<!--        </div>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+<!--</div>-->

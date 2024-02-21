@@ -8,10 +8,14 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TableDynamicComponent implements OnInit {
   @Input() columns: string[] = [];
   @Input() data: any[] = [];
-  @Input() service: any;
-  constructor() { }
-
+  @Input() config: any;
+  @Input() create: (args: any) => any;
+  @Input() delete: (args: any) => boolean;
+  @Input() update: (args: any) => any;
+  constructor() {}
   ngOnInit(): void {
+    console.log(this.config);
   }
 
+  protected readonly Object = Object;
 }

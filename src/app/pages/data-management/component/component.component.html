@@ -2,13 +2,13 @@
   <nb-card-header>
     <nb-icon status="primary" icon="settings-outline"></nb-icon>
 
-    <span class="ml-2" id="depot-span"> {{'MENU.categories' | translate}}</span>
+    <span class="ml-2" id="depot-span"> {{'MENU.components' | translate}}</span>
 
 
   </nb-card-header>  <nb-card-body>
   <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"
                    (createConfirm)="onCreateConfirm($event)" (editConfirm)="onSaveConfirm($event)"></ng2-smart-table>  </nb-card-body>
   <nb-card-footer>
-    <p class="font-weight-bold">{{categoryService.categories.length}} {{'MENU.categories' | translate}}</p>
+    <p class="font-weight-bold">{{componentService.components.length}} {{'MENU.components' | translate}}</p>
   </nb-card-footer>
 </nb-card>

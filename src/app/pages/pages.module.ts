@@ -8,15 +8,17 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { DataManagementComponent } from './data-management/data-management.component';
 import { TableDynamicComponent } from './table-dynamic/table-dynamic.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  imports: [
-    PagesRoutingModule,
-    ThemeModule,
-    NbMenuModule,
-    DashboardModule,
-    MiscellaneousModule,
-  ],
+    imports: [
+        PagesRoutingModule,
+        ThemeModule,
+        NbMenuModule,
+        DashboardModule,
+        MiscellaneousModule,
+        ReactiveFormsModule,
+    ],
   declarations: [
     PagesComponent,
     DataManagementComponent,

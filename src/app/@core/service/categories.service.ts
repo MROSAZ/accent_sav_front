@@ -8,9 +8,9 @@ import {dns} from '../../global.config';
 @Injectable({
   providedIn: 'root',
 })
+
 export class CategoriesService {
 
-  color: any;
   categories: Category[] = [];
   constructor(private _http: HttpClient) { }
   findAllCategoryServices(): Observable<Category[]> {

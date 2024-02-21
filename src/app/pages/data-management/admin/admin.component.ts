@@ -50,17 +50,15 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.dataManagementService.DataLoaded$.pipe(
       takeWhile(() => this.alive)).subscribe(
       res => {
-        this.authoritiesService.findAllAuthoritiesService().subscribe(authorities => {
-          for (let i = 0; i < authorities.length - 4; i++) {
+          for (let i = 0; i < this.authoritiesService.authorities.length; i++) {
             this.authorities.push({
-              value: authorities[i].id,
-              title: authorities[i].name,
-            });
+              value: this.authoritiesService.authorities[i].id,
+              title: this.authoritiesService.authorities[i].name,
+          });
           }
-          this.source.load(this.userService.users.filter(user => user.authorities[0].label === 'admin'));
+          this.source.load(this.userService.users);
           this.prepareNg2SmartTableUser();
         });
-      });
     if (!this.dataManagementService.checkDataLoaded()) {
       this.dataManagementService.loadData();
     }

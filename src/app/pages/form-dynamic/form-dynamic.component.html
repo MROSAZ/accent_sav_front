@@ -1,0 +1,23 @@
+<!--<form [formGroup]="form" (ngSubmit)="onSubmit()">-->
+<!--  <div *ngFor="let control of formConfig">-->
+<!--    <label>{{ control.id }}</label>-->
+<!--    <ng-container [ngSwitch]="control.type">-->
+<!--      <input *ngSwitchCase="'string'" [type]="'text'" [formControlName]="control.id" />-->
+<!--      <input *ngSwitchCase="'email'" [type]="'email'" [formControlName]="control.id" />-->
+<!--      <input *ngSwitchCase="'password'" [type]="'password'" [formControlName]="control.id" />-->
+<!--      <select *ngSwitchCase="'list'" [formControlName]="control.id">-->
+<!--        <option *ngFor="let option of control.options">-->
+<!--          {{ option.label }}-->
+<!--        </option>-->
+<!--      </select>-->
+<!--      <div *ngIf="Array.isArray(control.options)">-->
+<!--        <div *ngFor="let option of control.options">-->
+<!--          <input [type]="'checkbox'" [formControlName]="option.value" />-->
+<!--          <label>{{ option.label }}</label>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </ng-container>-->
+<!--    &lt;!&ndash; Add validation messages if needed &ndash;&gt;-->
+<!--  </div>-->
+<!--  <button type="submit">Submit</button>-->
+<!--</form>-->
