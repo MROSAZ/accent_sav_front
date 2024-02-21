@@ -148,8 +148,6 @@ export class ComponentComponent implements OnInit {
         'value': event.newData.value,
         'category': this.categoriesService.categories.find(categorie => event.newData.category = categorie.id),
         'backupRef': null,
-        'backupFor': null,
-        'backup': false,
       };
       this.componentService.add(event.newData).subscribe(
         res => {
@@ -171,7 +169,6 @@ export class ComponentComponent implements OnInit {
         'value': event.newData.value,
         'category': this.categoriesService.categories.find(categorie => event.newData.category = categorie.id),
         'backupRef': this.componentService.components.find(component => event.newData.id = component.id).backupRef,
-        'backup': event.newData.backup,
       };
       this.componentService.update(event.newData).subscribe(
         res => {

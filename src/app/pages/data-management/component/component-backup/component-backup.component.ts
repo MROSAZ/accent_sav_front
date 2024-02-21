@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Components } from '../../../../@core/data';
-import { ComponentService } from '../../../../@core/service/component.service';
 import {TosatrService} from '../../../../@core/service/tosatr.service';
 import {TranslateService} from '@ngx-translate/core';
+import {ComponentBuckupService} from '../../../../@core/service/component-buckup.service';
+import {ComponentService} from '../../../../@core/service/component.service';
 
 @Component({
   selector: 'ngx-component-backup',
@@ -19,6 +20,7 @@ export class ComponentBackupComponent implements OnInit {
   value: number;
   constructor(
     public componentService: ComponentService,
+    public componentBuckupService: ComponentBuckupService,
     private modalService: NgbModal,
     private tosatrService: TosatrService,
     private translateService: TranslateService,
@@ -28,6 +30,7 @@ export class ComponentBackupComponent implements OnInit {
   }
 
   open(content: any) {
+    console.log(this.rowData);
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -52,14 +55,12 @@ export class ComponentBackupComponent implements OnInit {
 
   addReference() {
     const newComponent: any = {
-      'id': null,
       'reference': this.reference,
       'value': this.value,
       'category': this.rowData.category,
-      'backupRef': [this.rowData],
-      'backup': true,
+      'backupRef': this.rowData,
     };
-    this.componentService.add(newComponent).subscribe(res => {
+    this.componentBuckupService.add(newComponent).subscribe(res => {
       this.componentService.components.find(component => this.rowData.id === component.id).backupRef.push(res);
       this.tosatrService.showToast('success', this.translateService.instant('response.addSuccess'), '');
     });

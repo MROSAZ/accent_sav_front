@@ -8,9 +8,14 @@ export class Components {
   id: number;
   reference: string;
   value: number;
-  backup: Boolean;
-  backupRef: Components[];
-  backupFor: Components;
+  backupRef: ComponentsBackup[];
+  category: Category;
+}
+export class ComponentsBackup {
+  id: number;
+  reference: string;
+  value: number;
+  backupRef: Components;
   category: Category;
 }
 export class Authorities {
