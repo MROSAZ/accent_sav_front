@@ -33,6 +33,10 @@ export class ComponentService {
     const headers = createAuthorizationHeader();
     return this._http.get<Components>( dns + 'component/' + id , { headers: headers });
   }
+  findComponentByIdModel(id: number): Observable<Components[]> {
+    const headers = createAuthorizationHeader();
+    return this._http.get<Components[]>( dns + 'component/model/' + id , { headers: headers });
+  }
   loadAllComponents() {
     this.findAllComponentServices().subscribe(components => {
       this.components = components;

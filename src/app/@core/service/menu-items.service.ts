@@ -60,37 +60,51 @@ export class MenuItemsService {
                 link: '/pages/data/admin',
               },
               {
+                title: this.translateService.instant('MENU.client'),
+                link: '/pages/data/client',
+              },
+              {
                 title: this.translateService.instant('MENU.categories'),
                 link: '/pages/data/categoies_component',
+              },
+              {
+                title: this.translateService.instant('MENU.model'),
+                link: '/pages/data/model',
               },
               {
                 title: this.translateService.instant('MENU.components'),
                 link: '/pages/data/components',
               },
-              // {
-              //   title: 'Authorities',
-              //   link: '/pages/data/authorities',
-              // },
-              // {
-              //   title: this.translateService.instant('MENU.reclamations'),
-              //   link: '/pages/data/reclamations',
-              // },
-              // {
-              //   title: this.translateService.instant('MENU.categories'),
-              //   link: '/pages/data/categories',
-              // },
-              // {
-              //   title: this.translateService.instant('MENU.sub-categories'),
-              //   link: '/pages/data/sous-category',
-              // },
-              // {
-              //   title: this.translateService.instant('MENU.title-suggestion'),
-              //   link: '/pages/data/title-suggestion',
-              // },
-              // {
-              //   title: this.translateService.instant('MENU.region'),
-              //   link: '/pages/data/region',
-              // },
+            ],
+          },
+          {
+            title: this.translateService.instant('MENU.production'),
+            icon: 'car-outline',
+            children: [
+              {
+                title: this.translateService.instant('MENU.cards'),
+                link: '/pages/production/cards',
+              },
+            ],
+          },
+          {
+            title: this.translateService.instant('MENU.vente'),
+            icon: 'shopping-cart-outline',
+            children: [
+              {
+                title: this.translateService.instant('MENU.cards'),
+                link: '/pages/vente/cards',
+              },
+            ],
+          },
+          {
+            title: this.translateService.instant('MENU.sav'),
+            icon: 'checkmark-square-outline',
+            children: [
+              {
+                title: this.translateService.instant('MENU.cards'),
+                link: '/pages/sav/cards',
+              },
             ],
           },
         ];

@@ -9,6 +9,6 @@
   <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"
                    (createConfirm)="onCreateConfirm($event)" (editConfirm)="onSaveConfirm($event)"></ng2-smart-table>  </nb-card-body>
   <nb-card-footer>
-    <p class="font-weight-bold">{{categoryService.categories.length}} {{'MENU.categories' | translate}}</p>
+    <p class="font-weight-bold">{{source.count()}} {{'MENU.categories' | translate}}</p>
   </nb-card-footer>
 </nb-card>

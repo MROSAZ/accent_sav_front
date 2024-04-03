@@ -24,6 +24,21 @@ const routes: Routes = [{
         .then(m => m.DataManagementModule),
     },
     {
+      path: 'production',
+      loadChildren: () => import('./production/production.module')
+        .then(m => m.ProductionModule),
+    },
+    {
+      path: 'vente',
+      loadChildren: () => import('./vente/vente.module')
+        .then(m => m.VenteModule),
+    },
+    {
+      path: 'sav',
+      loadChildren: () => import('./sav/sav.module')
+        .then(m => m.SavModule),
+    },
+    {
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full',

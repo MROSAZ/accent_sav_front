@@ -4,6 +4,7 @@ export class Category {
   measurementUnit: string;
   components: Components[];
 }
+
 export class Components {
   id: number;
   reference: string;
@@ -11,6 +12,24 @@ export class Components {
   backupRef: ComponentsBackup[];
   category: Category;
 }
+export class ComponentsSav {
+  component: Components;
+  quantity: number;
+}
+export class ComponentQuantity {
+  id: number;
+  historiqueMaintenance: HistoriqueMaintenance;
+  component: Components;
+  quantity: number;
+}
+
+export class HistoriqueMaintenance {
+  id: number;
+  card: Cards;
+  componentQuantities: ComponentQuantity[];
+  dateMaintenance: Date;
+}
+
 export class ComponentsBackup {
   id: number;
   reference: string;
@@ -18,11 +37,51 @@ export class ComponentsBackup {
   backupRef: Components;
   category: Category;
 }
+
+export class CardModel {
+  id: number;
+  model: string;
+  modelComponents: ModelComponent[];
+}
+
+export class ModelComponent {
+  id: number;
+  cardModel: CardModel;
+  component: Components;
+  quantity: number;
+
+}
+
+export class Client {
+  id: number;
+  email: string;
+  name: string;
+}
+
 export class Authorities {
   id: number;
   name: string;
   label: string;
 }
+
+export class Cards {
+  id: number;
+  imei: string;
+  numSerie: string;
+  addDate: Date;
+  buyDate: Date;
+  cardModel: CardModel;
+  client: Client;
+}
+export class CardsAddDto {
+  cards: Cards[];
+  cardModel: CardModel;
+}
+export class CardsStock {
+  model: string;
+  stock: number;
+}
+
 export class User {
   id: number;
   firstname: string;
@@ -33,6 +92,7 @@ export class User {
   email: string;
   authorities: Authorities[];
 }
+
 export class ResetData {
   password: string;
   token: string;

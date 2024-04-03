@@ -119,5 +119,4 @@ export class CategoriesComponent implements OnInit {
       this.tosatrService.showToast('danger', this.translateService.instant('response.updateError'), '');
     }
   }
-
 }

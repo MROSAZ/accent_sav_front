@@ -1,0 +1,15 @@
+<nb-card>
+  <nb-card-header>
+    <nb-icon status="primary" icon="settings-outline"></nb-icon>
+
+    <span class="ml-2" id="depot-span"> {{'MENU.client' | translate}}</span>
+
+
+  </nb-card-header>  <nb-card-body>
+  <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"
+                   (createConfirm)="onCreateConfirm($event)" (editConfirm)="onSaveConfirm($event)"></ng2-smart-table>
+ </nb-card-body>
+  <nb-card-footer>
+    <p class="font-weight-bold">{{clientService.clients.length}} {{'MENU.client' | translate}}</p>
+  </nb-card-footer>
+</nb-card>

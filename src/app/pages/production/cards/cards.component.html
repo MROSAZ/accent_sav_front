@@ -1,0 +1,88 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <nb-card class="mb-0" accent="primary">
+
+<ng-container >
+
+  <mat-tab-group>
+    <mat-tab label="Stock Cartes">
+      <table class="table">
+        <tbody>
+        <tr>
+          <td>Model</td>
+          <td *ngFor="let item of cardStock">{{ item.model }}</td>
+        </tr>
+        <tr>
+          <td>Stock</td>
+          <td *ngFor="let item of cardStock">{{ item.stock }}</td>
+        </tr>
+        </tbody>
+      </table>
+      <nb-card>
+        <nb-card-header> <nb-icon status="primary" icon="bar-chart"></nb-icon>
+          <span class="ml-2">{{'Cartes'| uppercase}}</span>
+        </nb-card-header>
+        <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="source" (editConfirm)="onSaveConfirm($event)"></ng2-smart-table>
+        </nb-card-body>
+        <nb-card-footer>
+          <p class="font-weight-bold">{{source.count()}} {{'MENU.cards-vente' | translate}}</p>
+        </nb-card-footer>
+      </nb-card>
+    </mat-tab>
+    <!--Temps d'arrets-->
+    <mat-tab label="Production Cartes">
+      <nb-accordion accent="primary">
+        <nb-accordion-item class="inline-form-card"  [expanded]="formExpanded">
+          <nb-accordion-item-header> <nb-icon status="primary" icon="bar-chart"></nb-icon>
+            <span class="ml-2">{{'Cartes'| uppercase}}</span>
+          </nb-accordion-item-header>
+          <nb-accordion-item-body class="w-100">
+            <form class="form-inline w-100 d-flex justify-content-between align-items-center">
+              <!-- Input field for uploading Excel file -->
+              <input nbInput placeholder="Liste des cartes" type="file" accept=".xlsx, .xls" (change)="onFileSelected($event)" class="col-12 col-md-2 px-0" />
+
+              <!-- Dropdown for selecting model -->
+              <nb-select fullWidth placeholder="model" [(selected)]="selectedModel" class="col-12 col-md-2 px-0" (selectedChange)="chooseModel($event)"
+                         *ngIf="filePreview && filePreview.length > 0 && missingFields?.length === 0">
+                <nb-option *ngFor="let model of modelCardsService.models" [value]="model">{{model.model | uppercase}}</nb-option>
+              </nb-select>
+
+              <!-- Button for validating -->
+              <button type="button" nbButton status="primary" size="small" class="col-12 col-md-1 px-0"
+                      [disabled]="missingFields?.length > 0 || !filePreview"
+                      (click)="addCards()">
+                <nb-icon icon="checkmark-square-2"></nb-icon>{{'Ajouter' | uppercase}}
+              </button>
+            </form>
+            <!-- Error message -->
+            <div *ngIf="missingFields?.length > 0" class="alert alert-danger mt-2" role="alert">
+              The uploaded file does not fit the required form. Missing fields: {{ missingFields.join(', ') }}
+            </div>
+          </nb-accordion-item-body>
+        </nb-accordion-item>
+      </nb-accordion>
+
+      <table *ngIf="filePreview && filePreview.length > 0 && missingFields?.length === 0" class="table">
+        <thead>
+        <tr>
+          <th>IMEI</th>
+          <th>Numéro de série</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of filePreview">
+          <td>{{ item['IMEI'] }}</td>
+          <td>{{ item['Numero de serie'] }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </mat-tab>
+
+  </mat-tab-group>
+
+
+</ng-container>
+    </nb-card>
+  </div>
+</div>

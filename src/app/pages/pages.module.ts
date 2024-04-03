@@ -21,7 +21,6 @@ import {ReactiveFormsModule} from '@angular/forms';
     ],
   declarations: [
     PagesComponent,
-    DataManagementComponent,
     TableDynamicComponent,
   ],
   exports: [

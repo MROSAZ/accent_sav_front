@@ -6,6 +6,8 @@ import {AdminComponent} from './admin/admin.component';
 import {NotificationComponent} from '../notification/notification.component';
 import {CategoriesComponent} from './categories/categories.component';
 import {ComponentComponent} from './component/component.component';
+import {ClientComponent} from './client/client.component';
+import {ModelCardComponent} from './model-card/model-card.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,16 @@ const routes: Routes = [
         path: 'categoies_component',
         // canActivate: [SuperAdminGuard],
         component: CategoriesComponent,
+      },
+      {
+        path: 'client',
+        // canActivate: [SuperAdminGuard],
+        component: ClientComponent,
+      },
+      {
+        path: 'model',
+        // canActivate: [SuperAdminGuard],
+        component: ModelCardComponent,
       },
       {
         path: 'components',

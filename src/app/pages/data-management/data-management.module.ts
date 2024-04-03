@@ -14,16 +14,24 @@ import { CategoriesComponent } from './categories/categories.component';
 import {PagesModule} from '../pages.module';
 import { ComponentComponent } from './component/component.component';
 import { ComponentBackupComponent } from './component/component-backup/component-backup.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
+import { ClientComponent } from './client/client.component';
+import { ModelCardComponent } from './model-card/model-card.component';
+import { ModelComponentComponent } from './model-card/model-component/model-component.component';
+import {DataManagementComponent} from './data-management.component';
 
 @NgModule({
   declarations: [
+    DataManagementComponent,
     AuthorityComponent,
     NotificationComponent,
     AdminComponent,
     CategoriesComponent,
     ComponentComponent,
     ComponentBackupComponent,
+    ClientComponent,
+    ModelCardComponent,
+    ModelComponentComponent,
   ],
   imports: [
     CommonModule,

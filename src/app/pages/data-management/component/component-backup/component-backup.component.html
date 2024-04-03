@@ -4,17 +4,15 @@
       <div>
         <p class="font-weight-bold">Autre Reference</p>
       </div>
-<!--      <div>-->
-<!--        <button class="btn btn-primary" (click)="toggleAddForm()">-->
-<!--          <i class="fa-regular fa-plus"></i> Add Reference-->
-<!--        </button>-->
-<!--      </div>-->
     </nb-card-header>
     <nb-card-body>
       <form *ngIf="showAddForm">
-        <div class="w-75 d-flex flex-column align-items-center justify-content-center">
+        <div class="formulaire w-75 d-flex flex-column align-items-center justify-content-center">
           <input type="text" placeholder="Reference" [(ngModel)]="reference" [ngModelOptions]="{standalone: true}" required>
           <input type="number" placeholder="Value" [(ngModel)]="value" [ngModelOptions]="{standalone: true}" required>
+        </div>
+        <div class="w-75 d-flex justify-content-center align-items-center">
+          <button class="btn btn-primary" (click)="addReference()">Add</button>
         </div>
         <div class="w-75 d-flex justify-content-center align-items-center">
           <button class="btn btn-primary" (click)="addReference()">Add</button>
@@ -55,7 +53,7 @@
         </table>
       </div>
       <div *ngIf="rowData.backupRef.length === 0" class="no-reference">
-        No component references available.
+        No backup references available.
       </div>
     </nb-card-body>
     <nb-card-footer>

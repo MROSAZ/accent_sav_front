@@ -55,9 +55,12 @@ export class ComponentBackupComponent implements OnInit {
     // Reset form fields when toggling visibility
   }
   toggleUpdateForm(component: ComponentsBackup) {
-    if(component !== this.componentBackup) {
+    if (this.showAddForm) {
+      this.showAddForm = false;
+    }
+    this.showUpdateForm = true;
+    if (component !== this.componentBackup) {
       this.componentBackup = component;
-    this.showUpdateForm = !this.showUpdateForm;
     this.showAddForm = false;
     } else {
       this.componentBackup = component;
@@ -80,7 +83,14 @@ export class ComponentBackupComponent implements OnInit {
     });
   }
   updateReference() {
-    this.componentBuckupService.update(this.componentBackup).subscribe(res => {
+    this.componentBuckupService.update(
+      {
+        'id': this.componentBackup.id,
+        'reference': this.componentBackup.reference,
+        'value': this.componentBackup.value,
+        'category': this.rowData.category,
+        'backupRef': this.rowData,
+      }).subscribe(res => {
       this.showUpdateForm = !this.showUpdateForm;
       this.componentBackup = null;
       this.tosatrService.showToast('success', this.translateService.instant('response.addSuccess'), '');

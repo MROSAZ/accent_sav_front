@@ -1,0 +1,78 @@
+<ng-template #content let-modal>
+  <nb-card class="w-100">
+    <nb-card-header class="w-100 d-flex justify-content-between align-items-center">
+      <div>
+        <p class="font-weight-bold">Models Components</p>
+      </div>
+    </nb-card-header>
+    <nb-card-body>
+      <form *ngIf="showAddForm">
+        <div class="formulaire w-75 d-flex flex-row align-items-center justify-content-center">
+          <select class="w-50 form-control" style="margin: 15px" [(ngModel)]="selectedItem" [ngModelOptions]="{standalone: true}">
+            <option [value]="0" selected>Components</option>
+            <option *ngFor="let component of compoenntService.components" [value]="component.id">{{component.reference | uppercase}}</option>
+          </select>
+          <input class="w-50 form-control" style="margin: 15px" type="number" placeholder="Quantity" [(ngModel)]="quantity" [ngModelOptions]="{standalone: true}" required>
+        </div>
+        <div class="w-75 d-flex flex-row justify-content-between align-items-center">
+          <button class="btn btn-primary" (click)="addModelComposant()" [disabled]="!selectedItem || quantity === 0">Add</button>
+          <button class="btn btn-primary" (click)="cancelAdd()">Cancel</button>
+        </div>
+      </form>
+      <form *ngIf="showUpdateForm">
+        <div class="formulaire w-75 d-flex flex-row align-items-center justify-content-center">
+          <input class="w-50 form-control" style="margin: 15px" type="number" [placeholder]="modelComponent.component.reference" disabled>
+          <input class="w-50 form-control" style="margin: 15px" type="number" placeholder="Quantity" [(ngModel)]="quantity" [ngModelOptions]="{standalone: true}" required>
+        </div>
+        <div class="w-75 d-flex flex-row justify-content-between align-items-center">
+          <button class="btn btn-primary" (click)="update()">Modifier</button>
+          <button class="btn btn-primary" (click)="cancelUpdate()">Cancel</button>
+        </div>
+      </form>
+      <div *ngIf="showDeleteForm">
+        <div class="formulaire w-75 d-flex flex-row align-items-center justify-content-center">
+          <input class="w-50 form-control" style="margin: 15px" type="number" [placeholder]="modelComponent.component.reference" disabled>
+        </div>
+        <div class="w-75 d-flex flex-row justify-content-between align-items-center">
+          <button class="btn btn-primary" (click)="delete()">Delete</button>
+          <button class="btn btn-primary" (click)="cancelDelete()">Cancel</button>
+        </div>
+      </div>
+      <div *ngIf="modelComponents.length > 0">
+        <table class="table mt-3">
+          <thead>
+          <tr>
+            <th>
+              <button class="btn btn-primary" (click)="toggleAddForm()">
+                <i class="fa-regular fa-plus"></i>
+              </button>
+            </th>
+            <th>ID</th>
+            <th>Reference</th>
+            <th>Quantity</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of modelComponents">
+            <button class="btn" (click)="toggleUpdateForm(item)"> <i class="fa-regular fa-pen-to-square"></i> </button>
+            <button class="btn" (click)="toggleDeleteForm(item)"> <i class="fa-regular fa-trash-can"></i> </button>
+            <td>{{ item.id }}</td>
+            <td>{{ item.component.reference }}</td>
+            <td>{{ item.quantity }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="modelComponents.length === 0" class="no-reference">
+        No backup references available.
+      </div>
+    </nb-card-body>
+    <nb-card-footer>
+      {{modelComponents.length}} Composant(s)
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary mt-3" (click)="open(content)">
+  <i class="fa fa-info"></i>
+</button>

@@ -80,6 +80,14 @@ export class ComponentComponent implements OnInit {
             return (cell + ' ' + row.category.measurementUnit);
           },
         },
+        quantity: {
+          title: 'Quantity',
+          type: Number,
+          filter: true,
+          valuePrepareFunction: (cell, row) => {
+            return (cell + ' ' + 'pieces');
+          },
+        },
         // backup: {
         //   title: 'BackUp',
         //   type: Boolean,
@@ -146,6 +154,7 @@ export class ComponentComponent implements OnInit {
       event.newData = {
         'reference': event.newData.reference,
         'value': event.newData.value,
+        'quantity': event.newData.quantity,
         'category': this.categoriesService.categories.find(categorie => event.newData.category = categorie.id),
         'backupRef': null,
       };
@@ -167,6 +176,7 @@ export class ComponentComponent implements OnInit {
         'id': event.newData.id,
         'reference': event.newData.reference,
         'value': event.newData.value,
+        'quantity': event.newData.quantity,
         'category': this.categoriesService.categories.find(categorie => event.newData.category = categorie.id),
         'backupRef': this.componentService.components.find(component => event.newData.id = component.id).backupRef,
       };

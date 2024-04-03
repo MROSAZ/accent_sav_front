@@ -1,0 +1,67 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <nb-card class="mb-0" accent="primary">
+
+      <ng-container >
+      <nb-card-header> <nb-icon status="primary" icon="bar-chart"></nb-icon>
+        <span class="ml-2">{{'Cartes'| uppercase}}</span>
+      </nb-card-header>
+      <nb-card-body class="w-100">
+        <div class="form-inline w-100 d-flex justify-content-between align-items-center">
+          <nb-select fullWidth placeholder="Client" [(selected)]="selectedClient" class="col-12 col-md-2 px-0"
+                     (selectedChange)="chooseClient($event)">
+            <nb-option *ngFor="let client of clientService.clients" [value]="client">{{client.name | uppercase}}</nb-option>
+          </nb-select>
+          <nb-select fullWidth placeholder="Model" [(selected)]="selectedModel" class="col-12 col-md-2 px-0"
+                     *ngIf="selectedClient"
+                     (selectedChange)="chooseModel($event)">
+            <nb-option *ngFor="let model of modelCardsService.models" [value]="model">{{model.model | uppercase}}</nb-option>
+          </nb-select>
+          <div class="d-flex flex-column justify-content-between align-items-center" *ngIf="selectedModel">
+            <input class="form-control m-1 w-100" type="text" name="search" id="search"
+                   [(ngModel)]="searchValue"
+                   (ngModelChange)="searchCards()"
+                   placeholder="Search" #search="ngModel" autocomplete>
+<!--          <div class="d-flex flex-row justify-content-between align-items-center">-->
+<!--          <label class="font-weight-bold">Cards</label>-->
+            <nb-select fullWidth multiple [(selected)]="selectedCards" [(ngModel)]="selectedCards" size="large" placeholder="Cards"
+            (selectedChange)="onSelectedCardsChange($event)">
+              <nb-option *ngFor="let card of cardsSearch" [value]="card">{{ card.numSerie }}</nb-option>
+              <option *ngIf="cardsSearch.length === 0">Aucune carte</option>
+            </nb-select>
+          </div>
+<!--          </div>-->
+          <button type="button" nbButton status="primary" size="small" class="col-12 col-md-1 px-0"
+                  (click)="addCards()"
+                  [disabled]="selectedCards.length === 0">
+            <nb-icon icon="checkmark-square-2"></nb-icon>{{'Ajouter' | uppercase}}
+          </button>
+        </div>
+        <!-- Error message -->
+<!--        <div *ngIf="missingFields?.length > 0" class="alert alert-danger mt-2" role="alert">-->
+<!--          The uploaded file does not fit the required form. Missing fields: {{ missingFields.join(', ') }}-->
+<!--        </div>-->
+      </nb-card-body>
+
+  <div class="table-responsive" *ngIf="selectedCards.length !== 0">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-light">
+      <tr>
+        <th class="text-center">IMEI</th>
+        <th class="text-center">Numéro de série</th>
+        <th class="text-center">Model</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of selectedCards">
+        <td class="align-middle text-center">{{ item.imei }}</td>
+        <td class="align-middle text-center">{{ item.numSerie }}</td>
+        <td class="align-middle text-center">{{ item.cardModel.model }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+      </ng-container>
+</nb-card>
+  </div>
+</div>
