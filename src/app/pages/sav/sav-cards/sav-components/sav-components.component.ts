@@ -2,8 +2,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {TosatrService} from '../../../../@core/service/tosatr.service';
 import {TranslateService} from '@ngx-translate/core';
-import {Cards, Components, ComponentsSav} from '../../../../@core/data';
+import {Cards, ComponentQuantity, Components, HistoriqueMaintenance} from '../../../../@core/data';
 import {ComponentService} from '../../../../@core/service/component.service';
+import {HistoriqueMaintenanceService} from '../../../../@core/service/historique-maintenance.service';
 
 @Component({
   selector: 'ngx-sav-components',
@@ -15,10 +16,12 @@ export class SavComponentsComponent implements OnInit {
   @Output() save: EventEmitter<any> = new EventEmitter();
   closeResult = '';
   component: Components[];
-  componentSav: ComponentsSav[] = [];
+  componentSav: ComponentQuantity[] = [];
+  historiqueMaintenance: HistoriqueMaintenance = new HistoriqueMaintenance();
   constructor(
     private modalService: NgbModal,
     private componentService: ComponentService,
+    private historiqueMainetenanceService: HistoriqueMaintenanceService,
     private tosatrService: TosatrService,
     private translateService: TranslateService,
   ) { }
@@ -38,8 +41,9 @@ export class SavComponentsComponent implements OnInit {
     this.componentSav = [];
     this.componentService.findComponentByIdModel(this.rowData.cardModel.id).subscribe(
       component => {
+        console.log(component);
         component.forEach(comp => {
-          this.componentSav.push({'component': comp, 'quantity': 0});
+          this.componentSav.push({historiqueMaintenance: null, id: null, 'component': comp, 'quantity': 0});
         });
       });
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -51,6 +55,19 @@ export class SavComponentsComponent implements OnInit {
 
   close() {
     this.modalService.dismissAll();
+  }
+
+  createMaintenance() {
+    this.historiqueMaintenance. dateMaintenance = new Date();
+    this.historiqueMaintenance.componentQuantities = this.componentSav;
+    this.historiqueMaintenance.card = this.rowData;
+    this.historiqueMainetenanceService.add(this.historiqueMaintenance).subscribe(res => {
+        this.tosatrService.showToast('success', this.translateService.instant('response.addSuccess'), '');
+      },
+      // Error callback
+      error => {
+        this.tosatrService.showToast('danger', this.translateService.instant('response.addError'), '');
+      });
   }
 
 }

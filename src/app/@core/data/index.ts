@@ -12,10 +12,6 @@ export class Components {
   backupRef: ComponentsBackup[];
   category: Category;
 }
-export class ComponentsSav {
-  component: Components;
-  quantity: number;
-}
 export class ComponentQuantity {
   id: number;
   historiqueMaintenance: HistoriqueMaintenance;
@@ -58,6 +54,12 @@ export class Client {
   name: string;
 }
 
+export class Production {
+  id: number;
+  cards: Cards[];
+  dateProduction: Date;
+}
+
 export class Authorities {
   id: number;
   name: string;
@@ -72,6 +74,7 @@ export class Cards {
   buyDate: Date;
   cardModel: CardModel;
   client: Client;
+  production: Production;
 }
 export class CardsAddDto {
   cards: Cards[];
