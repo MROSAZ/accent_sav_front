@@ -1,45 +1,31 @@
-@import '../../@theme/styles/themes';
-@import 'bootstrap/scss/mixins/breakpoints';
-@import '@nebular/theme/styles/global/breakpoints';
-
-@include nb-install-component() {
-  .solar-card nb-card-header {
-    border: none;
-    padding-bottom: 0;
-  }
-
-  @include media-breakpoint-down(sm) {
-    ngx-traffic {
-      display: none;
-    }
-  }
-}
-.fancy-introduction-card {
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.fancy-header {
-  background-color: #3498db;
-  color: #fff;
+.box-container {
+  width: 10%;
   padding: 10px;
-  font-size: 1.8em;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-content {
+  width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.fancy-body {
-  padding: 20px;
-  font-size: 1.4em;
-  line-height: 1.6;
+.bg-danger {
+  background-color: #ffcccc; /* Light red */
 }
 
-.fancy-footer {
-  background-color: #ecf0f1;
-  padding: 10px;
-  font-size: 1.2em;
-  text-align: center;
+.bg-warning {
+  background-color: #ffffcc; /* Light yellow */
 }
 
+.bg-success {
+  background-color: #ccffcc; /* Light green */
+}

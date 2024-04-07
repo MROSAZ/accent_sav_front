@@ -1,5 +1,12 @@
-<nb-card class="bg-info">
-  <nb-card-body>
-Dashboard
-</nb-card-body>
+<nb-card>
+<nb-card-header>
+  <div class="d-flex justify-content-center align-items-center flex-row">
+    <div class="box-container" *ngFor="let component of componentService.components" [ngClass]="getQuantityColor(component.quantity)">
+      <div class="box-content">
+        <h6 class="text-white">{{component.reference}}</h6>
+        <h6 class="text-white">{{component.quantity}}</h6>
+      </div>
+    </div>
+  </div>
+</nb-card-header>
 </nb-card>

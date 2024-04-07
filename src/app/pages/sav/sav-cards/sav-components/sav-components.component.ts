@@ -41,7 +41,6 @@ export class SavComponentsComponent implements OnInit {
     this.componentSav = [];
     this.componentService.findComponentByIdModel(this.rowData.cardModel.id).subscribe(
       component => {
-        console.log(component);
         component.forEach(comp => {
           this.componentSav.push({historiqueMaintenance: null, id: null, 'component': comp, 'quantity': 0});
         });
@@ -62,7 +61,8 @@ export class SavComponentsComponent implements OnInit {
     this.historiqueMaintenance.componentQuantities = this.componentSav;
     this.historiqueMaintenance.card = this.rowData;
     this.historiqueMainetenanceService.add(this.historiqueMaintenance).subscribe(res => {
-        this.tosatrService.showToast('success', this.translateService.instant('response.addSuccess'), '');
+      this.close();
+      this.tosatrService.showToast('success', this.translateService.instant('response.addSuccess'), '');
       },
       // Error callback
       error => {

@@ -11,6 +11,7 @@ export class Components {
   value: number;
   backupRef: ComponentsBackup[];
   category: Category;
+  quantity: number;
 }
 export class ComponentQuantity {
   id: number;
