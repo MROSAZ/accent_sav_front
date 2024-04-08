@@ -13,6 +13,13 @@ export class Components {
   category: Category;
   quantity: number;
 }
+
+export class ProdHistorique {
+  id: number;
+  model: string;
+  dateProd: Date;
+  card: number;
+}
 export class ComponentQuantity {
   id: number;
   historiqueMaintenance: HistoriqueMaintenance;

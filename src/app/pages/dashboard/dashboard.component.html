@@ -1,12 +1,70 @@
-<nb-card>
-<nb-card-header>
-  <div class="d-flex justify-content-center align-items-center flex-row">
-    <div class="box-container" *ngFor="let component of componentService.components" [ngClass]="getQuantityColor(component.quantity)">
-      <div class="box-content">
-        <h6 class="text-white">{{component.reference}}</h6>
-        <h6 class="text-white">{{component.quantity}}</h6>
+<div class="d-flex justify-content-center align-items-center flex-row w-100">
+  <nb-card class="m-2 w-50" accent="primary" *ngIf="getQuantityExistance(componentService.components)">
+    <nb-accordion>
+      <nb-accordion-item class="inline-form-card"  [expanded]="componentExpand">
+      <nb-accordion-item-header>
+        <span class="ml-2">{{'Composant'| uppercase}}</span>
+      </nb-accordion-item-header>
+      <nb-accordion-item-body>
+        <div class="d-flex justify-content-center align-items-center flex-row m-2">
+          <div class="box-container bg-danger" *ngFor="let component of componentService.components" [ngClass]="getDisplay(component.quantity)">
+            <div class="box-content">
+              <h6 class="text-white">{{component.reference}}</h6>
+              <h6 class="text-white">{{component.quantity}}</h6>
+            </div>
+          </div>
+        </div>
+      </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+
+</nb-card>
+<nb-card class="m-2 w-50" accent="success">
+  <nb-accordion>
+    <nb-accordion-item class="inline-form-card"  [expanded]="cardExpand">
+
+  <nb-accordion-item-header>
+    <span class="ml-2">{{'Cards'| uppercase}}</span>
+  </nb-accordion-item-header>
+  <nb-accordion-item-body>
+    <div class="d-flex justify-content-center align-items-center flex-row m-2" *ngIf="getStockExistance(cardStock)">
+      <div class="box-container bg-danger" *ngFor="let cardStock of cardStock" [ngClass]="getDisplay(cardStock.stock)">
+        <div class="box-content">
+          <h6 class="text-white">{{cardStock.model}}</h6>
+          <h6 class="text-white">{{cardStock.stock}}</h6>
+        </div>
       </div>
     </div>
-  </div>
-</nb-card-header>
+  </nb-accordion-item-body>
+      </nb-accordion-item>
+  </nb-accordion>
 </nb-card>
+</div>
+  <nb-card class="m-2 w-100" accent="success">
+    <nb-accordion>
+      <nb-accordion-item class="inline-form-card"  [expanded]="prodExpand">
+    <nb-accordion-item-header>
+      <span class="ml-2">{{'Productions'| uppercase}}</span>
+    </nb-accordion-item-header>
+    <nb-accordion-item-body>
+      <table class="table table-striped w-100">
+        <thead>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Model</th>
+        <th>Quantity</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of productionHistorique">
+          <td >{{ item.id }}</td>
+          <td >{{ item.dateProd | date}}</td>
+          <td >{{ item.model }}</td>
+          <td >{{ item.card }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+  </nb-card>
+

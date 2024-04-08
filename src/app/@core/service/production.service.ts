@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Client, Production} from '../data';
+import {Client, ProdHistorique, Production} from '../data';
 import {createAuthorizationHeader} from '../utils/headers';
 import {dns} from '../../global.config';
 
@@ -17,6 +17,10 @@ export class ProductionService {
   findAll(): Observable<Production[]> {
     const headers = createAuthorizationHeader();
     return this._http.get<Production[]>(dns + 'production', {headers: headers});
+  }
+  findAllHistorique(): Observable<ProdHistorique[]> {
+    const headers = createAuthorizationHeader();
+    return this._http.get<ProdHistorique[]>(dns + 'production/gethistorique', {headers: headers});
   }
 
   add(production: Production): Observable<any> {

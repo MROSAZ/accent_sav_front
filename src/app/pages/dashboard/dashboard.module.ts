@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import {
-  NbActionsModule,
-  NbButtonModule,
-  NbCardModule,
-  NbTabsetModule,
-  NbUserModule,
-  NbRadioModule,
-  NbSelectModule,
-  NbListModule,
-  NbIconModule, NbProgressBarModule,
+    NbActionsModule,
+    NbButtonModule,
+    NbCardModule,
+    NbTabsetModule,
+    NbUserModule,
+    NbRadioModule,
+    NbSelectModule,
+    NbListModule,
+    NbIconModule, NbProgressBarModule, NbAccordionModule,
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
@@ -41,6 +41,7 @@ import {HighchartsChartModule} from 'highcharts-angular';
         TranslateModule,
         NbProgressBarModule,
         HighchartsChartModule,
+        NbAccordionModule,
     ],
   declarations: [
     DashboardComponent,

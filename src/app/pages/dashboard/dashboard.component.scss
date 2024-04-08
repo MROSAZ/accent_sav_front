@@ -1,7 +1,8 @@
 .box-container {
-  width: 10%;
-  padding: 10px;
-  margin: 10px;
+  width: 120px; /* Adjust the width as needed */
+  height: 95px; /* Adjust the height as needed */
+  padding: 5px;
+  margin: 5px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -12,10 +13,6 @@
 .box-content {
   width: 100%;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .bg-danger {
